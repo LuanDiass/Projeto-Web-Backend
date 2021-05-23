@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../configuracao/auth");
-const User = require("../models/User");
+const User = require("../models/user");
 
 const router = express.Router();
 
@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
 router.post("/authenticate", async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await user.findOne({ email }).select("+password");
+  const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
     return res.status(400).send({ error: "Usuario nao encontrado" });
