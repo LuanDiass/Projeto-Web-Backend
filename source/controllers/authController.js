@@ -1,6 +1,8 @@
 const express = require("express");
-
+const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+
+const authConfig = require("../config/auth");
 
 const router = express.Router();
 
@@ -22,6 +24,10 @@ router.post("/authenticate", async (req, res) => {
   if (!user) {
     return res.status(400).send({ error: "Usuario nao encontrado" });
   }
-});
 
-module.exports = (app) => app.use("/auth", router);
+  const token = jwt.sign({ id: user.id }, authConfig.secret, {
+    expiresIn: 900000,
+  });
+
+  res.send({ user, token });
+});
