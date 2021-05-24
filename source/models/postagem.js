@@ -1,0 +1,23 @@
+const mongoose = require("../database");
+const { Schema } = mongoose;
+
+const PostagemSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  text: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+module.exports = mongoose.model("Postagem", PostagemSchema);
