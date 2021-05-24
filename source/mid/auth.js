@@ -16,9 +16,8 @@ module.exports = (req, res, next) => {
 
   const [scheme, token] = parts;
 
-  if (!/^Bearer$^/i.test(scheme)) {
-    return res.status(401).send({ error: "Token mal formatado" });
-  }
+  if (!/^Bearer$/i.test(scheme))
+    return response.status(401).send({ error: "Token malformed" });
 
   jwt.verify(token, authConfig.secret, (err, decoded) => {
     if (err) {
