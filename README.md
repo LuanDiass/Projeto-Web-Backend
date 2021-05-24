@@ -9,6 +9,7 @@ Foi desenvolvido por Luiz Miguel Naldi Dias e Luan Antônio Dias.
 Link para o repositório do front: [Repositório](https://www.youtube.com/watch?v=BN_8bCfVp88&list=PLUXy0s85E0_hWQqCtzcPLbMITnSQfRVXj&index=1).
 
 Link de referência do tutorial de Register/Authenticate: [Referência 1](https://www.youtube.com/playlist?list=PL85ITvJ7FLoiXVwHXeOsOuVppGbBzo2dp.).
+
 Link de referência do tutorial de Upload: [Referência 2](https://www.youtube.com/watch?v=MkkbUfcZUZM).
 
 # Testes com o plugIn Insomnia
