@@ -11,7 +11,7 @@ Link para o repositório do front: [Repositório](https://www.youtube.com/watch?
 Link de referência do tutorial de Register/Authenticate: [Referência 1](https://www.youtube.com/playlist?list=PL85ITvJ7FLoiXVwHXeOsOuVppGbBzo2dp.).
 Link de referência do tutorial de Upload: [Referência 2](https://www.youtube.com/watch?v=MkkbUfcZUZM).
 
-# Testes com o pulgIn Insomnia
+# Testes com o plugIn Insomnia
 
 Teste de Registro
 ![image](https://user-images.githubusercontent.com/28942532/119306658-dc025000-bc40-11eb-8a09-54d19ec0cd6d.png)
