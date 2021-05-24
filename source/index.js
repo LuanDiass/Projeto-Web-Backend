@@ -1,20 +1,22 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+const path = require("path");
+
 const app = express();
-const Publicacoes = require("./models/publicacoes");
+
+const uploadConfig = require("./mid/upload");
+const upload = multer(uploadConfig);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./controllers/authController")(app);
 require("./controllers/controleProj")(app);
+const postagemController = require("./controllers/postagemController");
 
-app.post("/cadastro", async function (req, res) {
-  const { id, nome, mensagem } = req.body;
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-  const data = await Publicacoes.create({ id, nome, mensagem });
-
-  return res.json(data);
-});
+app.post("/cadastro", upload.array("images"), postagemController.create);
 
 app.listen(3000);
