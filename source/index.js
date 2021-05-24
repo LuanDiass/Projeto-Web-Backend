@@ -2,8 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 const uploadConfig = require("./mid/upload");
 const upload = multer(uploadConfig);
