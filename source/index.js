@@ -3,17 +3,10 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-<<<<<<< Updated upstream
-
-const app = express();
-app.use(cors());
-
-=======
 const auth = require("./mid/auth");
 
 const app = express();
 app.use(cors());
->>>>>>> Stashed changes
 const uploadConfig = require("./mid/upload");
 const upload = multer(uploadConfig);
 
@@ -24,7 +17,7 @@ require("./controllers/authController")(app);
 require("./controllers/controleProj")(app);
 const postagemController = require("./controllers/postagemController");
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(path.resolve(__dirname, "../uploads")));
 
 app.post("/postagens", auth, upload.array("images"), postagemController.create);
 
